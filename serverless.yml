@@ -1,0 +1,82 @@
+# NOTE: update this with your service name
+service: pareto-serverless-mongo
+
+# Use the serverless-webpack plugin to transpile ES6
+plugins:
+  - serverless-webpack
+  - serverless-offline
+
+# serverless-webpack configuration
+# Enable auto-packing of external modules
+custom:
+  webpack:
+    webpackConfig: ./webpack.config.js
+    includeModules: true
+
+provider:
+  name: aws
+  runtime: nodejs10.x
+  stage: prod
+  region: us-east-1
+  # profile: enter-name-here
+  memorySize: 128
+  timeout: 10
+  iamRoleStatements:
+    - Effect: 'Allow'
+      Action:
+        - 'ses:SendEmail'
+      Resource: '*'
+
+functions:
+  email:
+    handler: email.main
+    events:
+      - http:
+          path: email
+          method: post
+          cors: true
+  createUser:
+    handler: users.create
+    environment:
+      DB: ${ssm:mongo}
+    events:
+      - http:
+          path: users
+          method: post
+          cors: true
+  getOneUser:
+    handler: users.getOne
+    environment:
+      DB: ${ssm:mongo}
+    events:
+      - http:
+          path: users/{id}
+          method: get
+          cors: true
+  getAllUsers:
+    handler: users.getAll
+    environment:
+      DB: ${ssm:mongo}
+    events:
+      - http:
+          path: users
+          method: get
+          cors: true
+  updateUser:
+    handler: users.update
+    environment:
+      DB: ${ssm:mongo}
+    events:
+      - http:
+          path: users/{id}
+          method: put
+          cors: true
+  deleteUser:
+    handler: users.delete
+    environment:
+      DB: ${ssm:mongo}
+    events:
+      - http:
+          path: users/{id}
+          method: delete
+          cors: true
