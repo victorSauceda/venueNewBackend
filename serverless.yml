@@ -5,6 +5,7 @@ service: pareto-serverless-mongo
 plugins:
   - serverless-webpack
   - serverless-offline
+  - serverless-dotenv-plugin # Load .env as environment variables
 
 # serverless-webpack configuration
 # Enable auto-packing of external modules
@@ -17,15 +18,15 @@ provider:
   name: aws
   runtime: nodejs10.x
   stage: prod
-  region: us-east-1
+  region: us-west-2
   # profile: enter-name-here
   memorySize: 128
   timeout: 10
   iamRoleStatements:
-    - Effect: 'Allow'
+    - Effect: "Allow"
       Action:
-        - 'ses:SendEmail'
-      Resource: '*'
+        - "ses:SendEmail"
+      Resource: "*"
 
 functions:
   email:
@@ -79,4 +80,14 @@ functions:
       - http:
           path: users/{id}
           method: delete
+          cors: true
+  billing:
+    # Defines an HTTP API endpoint that calls the main function in billing.js
+    # - path: url path is /billing
+    # - method: POST request
+    handler: billing.main
+    events:
+      - http:
+          path: billing
+          method: post
           cors: true
