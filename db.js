@@ -1,6 +1,8 @@
 const mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
 let isConnected;
+mongoose.set("useNewUrlParser", true);
+mongoose.set("useUnifiedTopology", true);
 
 module.exports = connectToDatabase = () => {
   if (isConnected) {

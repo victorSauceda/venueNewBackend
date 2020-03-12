@@ -2,8 +2,8 @@ const stripePackage = require("stripe");
 // import { calculateCost } from "./libs/billing-lib";
 const { success, failure } = require("./libs/response-lib");
 
-module.export.main = async (event, context) => {
-  const { source } = JSON.parse(event.body);
+export async function main(event, context) {
+  const { storage, source } = JSON.parse(event.body);
   console.log("event:", event.body, "source: ", source);
   const total = JSON.parse(event.body);
   const amount = total.amount * 100;
@@ -25,4 +25,4 @@ module.export.main = async (event, context) => {
   } catch (e) {
     return failure({ message: e.message });
   }
-};
+}

@@ -1,11 +1,11 @@
 "use strict";
-const User = require("./models/User");
+const Transaction = require("./models/Transaction");
 const connectToDatabase = require("./db");
 
 module.exports.create = (event, context, callback) => {
   context.callbackWaitsForEmptyEventLoop = false;
   return connectToDatabase()
-    .then(() => User.create(JSON.parse(event.body)))
+    .then(() => Transaction.create(JSON.parse(event.body)))
     .then(user =>
       callback(null, {
         statusCode: 200,
@@ -35,7 +35,7 @@ module.exports.getOne = (event, context, callback) => {
   console.log("User Context: ", context);
   console.log("User Callback: ", callback);
   return connectToDatabase()
-    .then(() => User.find({ id: event.pathParameters.id }))
+    .then(() => Transaction.find({ id: event.pathParameters.id }))
     .then(user => {
       console.log("User object: ", user);
       callback(null, {
@@ -64,7 +64,7 @@ module.exports.getOne = (event, context, callback) => {
 module.exports.getAll = (event, context, callback) => {
   context.callbackWaitsForEmptyEventLoop = false;
   return connectToDatabase()
-    .then(() => User.find())
+    .then(() => Transaction.find())
     .then(users =>
       callback(null, {
         statusCode: 200,
@@ -92,7 +92,7 @@ module.exports.update = (event, context, callback) => {
   context.callbackWaitsForEmptyEventLoop = false;
   return connectToDatabase()
     .then(() =>
-      User.findOneAndUpdate(
+      Transaction.findOneAndUpdate(
         { id: event.pathParameters.id },
         JSON.parse(event.body),
         { new: true }
@@ -124,7 +124,7 @@ module.exports.update = (event, context, callback) => {
 module.exports.delete = (event, context, callback) => {
   context.callbackWaitsForEmptyEventLoop = false;
   return connectToDatabase()
-    .then(() => User.findOneAndRemove({ id: event.pathParameters.id }))
+    .then(() => Transaction.findOneAndRemove({ id: event.pathParameters.id }))
     .then(user =>
       callback(null, {
         statusCode: 200,

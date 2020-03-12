@@ -58,6 +58,36 @@
         "LogGroupName": "/aws/lambda/pareto-serverless-mongo-prod-billing"
       }
     },
+    "CreateTransactionLogGroup": {
+      "Type": "AWS::Logs::LogGroup",
+      "Properties": {
+        "LogGroupName": "/aws/lambda/pareto-serverless-mongo-prod-createTransaction"
+      }
+    },
+    "GetOneTransactionLogGroup": {
+      "Type": "AWS::Logs::LogGroup",
+      "Properties": {
+        "LogGroupName": "/aws/lambda/pareto-serverless-mongo-prod-getOneTransaction"
+      }
+    },
+    "GetAllTransactionLogGroup": {
+      "Type": "AWS::Logs::LogGroup",
+      "Properties": {
+        "LogGroupName": "/aws/lambda/pareto-serverless-mongo-prod-getAllTransaction"
+      }
+    },
+    "UpdateTransactionLogGroup": {
+      "Type": "AWS::Logs::LogGroup",
+      "Properties": {
+        "LogGroupName": "/aws/lambda/pareto-serverless-mongo-prod-updateTransaction"
+      }
+    },
+    "DeleteTransactionLogGroup": {
+      "Type": "AWS::Logs::LogGroup",
+      "Properties": {
+        "LogGroupName": "/aws/lambda/pareto-serverless-mongo-prod-deleteTransaction"
+      }
+    },
     "IamRoleLambdaExecution": {
       "Type": "AWS::IAM::Role",
       "Properties": {
@@ -148,7 +178,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/pareto-serverless-mongo/prod/1583865644890-2020-03-10T18:40:44.890Z/pareto-serverless-mongo.zip"
+          "S3Key": "serverless/pareto-serverless-mongo/prod/1584033694729-2020-03-12T17:21:34.729Z/pareto-serverless-mongo.zip"
         },
         "FunctionName": "pareto-serverless-mongo-prod-email",
         "Handler": "email.main",
@@ -173,14 +203,14 @@
         "IamRoleLambdaExecution"
       ]
     },
-    "EmailLambdaVersiongvNu93vu6VfAptXQl1LsrpMFA6bV2SoXfg0nowiAc": {
+    "EmailLambdaVersionvvI1USnHfk9PKBshedGWUfjchEGaHzUEuBk16iAkY": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "EmailLambdaFunction"
         },
-        "CodeSha256": "TGTWxTeONSAkVUctEgBKpO3QebKF1J/qNpKpmep+ZLI="
+        "CodeSha256": "9NnHJkrQHbWj/gNZfUEk8NQ6sPC09+zw2kXTi4sNQak="
       }
     },
     "CreateUserLambdaFunction": {
@@ -190,7 +220,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/pareto-serverless-mongo/prod/1583865644890-2020-03-10T18:40:44.890Z/pareto-serverless-mongo.zip"
+          "S3Key": "serverless/pareto-serverless-mongo/prod/1584033694729-2020-03-12T17:21:34.729Z/pareto-serverless-mongo.zip"
         },
         "FunctionName": "pareto-serverless-mongo-prod-createUser",
         "Handler": "users.create",
@@ -215,14 +245,14 @@
         "IamRoleLambdaExecution"
       ]
     },
-    "CreateUserLambdaVersionRTdaCnxxUiZXFTEuLCP4nAna236rWfZxB4xeTiZNJ8g": {
+    "CreateUserLambdaVersionBOk8Q4ojDsDJ78EkENsYy6W5NsWq2Y0SQpxrryq7Rc": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "CreateUserLambdaFunction"
         },
-        "CodeSha256": "TGTWxTeONSAkVUctEgBKpO3QebKF1J/qNpKpmep+ZLI="
+        "CodeSha256": "9NnHJkrQHbWj/gNZfUEk8NQ6sPC09+zw2kXTi4sNQak="
       }
     },
     "GetOneUserLambdaFunction": {
@@ -232,7 +262,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/pareto-serverless-mongo/prod/1583865644890-2020-03-10T18:40:44.890Z/pareto-serverless-mongo.zip"
+          "S3Key": "serverless/pareto-serverless-mongo/prod/1584033694729-2020-03-12T17:21:34.729Z/pareto-serverless-mongo.zip"
         },
         "FunctionName": "pareto-serverless-mongo-prod-getOneUser",
         "Handler": "users.getOne",
@@ -257,14 +287,14 @@
         "IamRoleLambdaExecution"
       ]
     },
-    "GetOneUserLambdaVersionlH06UyTeXgvfwd9xVl5OnJueyh85kjf4ciU3aGOkeA": {
+    "GetOneUserLambdaVersioneeFAmtnn9sdvodT3HUWiKSYLi3Hj1y8HYfzsxcuOfYk": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "GetOneUserLambdaFunction"
         },
-        "CodeSha256": "TGTWxTeONSAkVUctEgBKpO3QebKF1J/qNpKpmep+ZLI="
+        "CodeSha256": "9NnHJkrQHbWj/gNZfUEk8NQ6sPC09+zw2kXTi4sNQak="
       }
     },
     "GetAllUsersLambdaFunction": {
@@ -274,7 +304,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/pareto-serverless-mongo/prod/1583865644890-2020-03-10T18:40:44.890Z/pareto-serverless-mongo.zip"
+          "S3Key": "serverless/pareto-serverless-mongo/prod/1584033694729-2020-03-12T17:21:34.729Z/pareto-serverless-mongo.zip"
         },
         "FunctionName": "pareto-serverless-mongo-prod-getAllUsers",
         "Handler": "users.getAll",
@@ -299,14 +329,14 @@
         "IamRoleLambdaExecution"
       ]
     },
-    "GetAllUsersLambdaVersionQI54jcec9a7Xi423rG2rJrIdGbx4wVBrmOySr6Teg": {
+    "GetAllUsersLambdaVersion0JblQEDcOtaaU5aCLf9y90sAjqMhn5Uf6LjuFPRg": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "GetAllUsersLambdaFunction"
         },
-        "CodeSha256": "TGTWxTeONSAkVUctEgBKpO3QebKF1J/qNpKpmep+ZLI="
+        "CodeSha256": "9NnHJkrQHbWj/gNZfUEk8NQ6sPC09+zw2kXTi4sNQak="
       }
     },
     "UpdateUserLambdaFunction": {
@@ -316,7 +346,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/pareto-serverless-mongo/prod/1583865644890-2020-03-10T18:40:44.890Z/pareto-serverless-mongo.zip"
+          "S3Key": "serverless/pareto-serverless-mongo/prod/1584033694729-2020-03-12T17:21:34.729Z/pareto-serverless-mongo.zip"
         },
         "FunctionName": "pareto-serverless-mongo-prod-updateUser",
         "Handler": "users.update",
@@ -341,14 +371,14 @@
         "IamRoleLambdaExecution"
       ]
     },
-    "UpdateUserLambdaVersion1GO1FOmyjEa7ZU2qdMZi7EJrusAtlVR03VkXZIY3JA": {
+    "UpdateUserLambdaVersionuFuBz9fXbVdb0aCOBE1h2sgTmYBj5TfLB4EET4faDyk": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "UpdateUserLambdaFunction"
         },
-        "CodeSha256": "TGTWxTeONSAkVUctEgBKpO3QebKF1J/qNpKpmep+ZLI="
+        "CodeSha256": "9NnHJkrQHbWj/gNZfUEk8NQ6sPC09+zw2kXTi4sNQak="
       }
     },
     "DeleteUserLambdaFunction": {
@@ -358,7 +388,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/pareto-serverless-mongo/prod/1583865644890-2020-03-10T18:40:44.890Z/pareto-serverless-mongo.zip"
+          "S3Key": "serverless/pareto-serverless-mongo/prod/1584033694729-2020-03-12T17:21:34.729Z/pareto-serverless-mongo.zip"
         },
         "FunctionName": "pareto-serverless-mongo-prod-deleteUser",
         "Handler": "users.delete",
@@ -383,14 +413,14 @@
         "IamRoleLambdaExecution"
       ]
     },
-    "DeleteUserLambdaVersionQxALZZRPo4M60XCcW00IQiFb2NXIUlmcjmpSzjURr4": {
+    "DeleteUserLambdaVersionDdJvxfV6sVk2BCdgFk0uQSGLQOyZia8bJYzIFneNag": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "DeleteUserLambdaFunction"
         },
-        "CodeSha256": "TGTWxTeONSAkVUctEgBKpO3QebKF1J/qNpKpmep+ZLI="
+        "CodeSha256": "9NnHJkrQHbWj/gNZfUEk8NQ6sPC09+zw2kXTi4sNQak="
       }
     },
     "BillingLambdaFunction": {
@@ -400,7 +430,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/pareto-serverless-mongo/prod/1583865644890-2020-03-10T18:40:44.890Z/pareto-serverless-mongo.zip"
+          "S3Key": "serverless/pareto-serverless-mongo/prod/1584033694729-2020-03-12T17:21:34.729Z/pareto-serverless-mongo.zip"
         },
         "FunctionName": "pareto-serverless-mongo-prod-billing",
         "Handler": "billing.main",
@@ -425,14 +455,224 @@
         "IamRoleLambdaExecution"
       ]
     },
-    "BillingLambdaVersion6nhORrt7fs6YDtb8ryDm3jyJD2z2XHqCrzFOFG3Rk": {
+    "BillingLambdaVersionpXhtVxNIX2PktWH9QMrRqHVB4AIxGHklLml5KJhTjjM": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "BillingLambdaFunction"
         },
-        "CodeSha256": "TGTWxTeONSAkVUctEgBKpO3QebKF1J/qNpKpmep+ZLI="
+        "CodeSha256": "9NnHJkrQHbWj/gNZfUEk8NQ6sPC09+zw2kXTi4sNQak="
+      }
+    },
+    "CreateTransactionLambdaFunction": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Ref": "ServerlessDeploymentBucket"
+          },
+          "S3Key": "serverless/pareto-serverless-mongo/prod/1584033694729-2020-03-12T17:21:34.729Z/pareto-serverless-mongo.zip"
+        },
+        "FunctionName": "pareto-serverless-mongo-prod-createTransaction",
+        "Handler": "transaction.create",
+        "MemorySize": 128,
+        "Role": {
+          "Fn::GetAtt": [
+            "IamRoleLambdaExecution",
+            "Arn"
+          ]
+        },
+        "Runtime": "nodejs10.x",
+        "Timeout": 10,
+        "Environment": {
+          "Variables": {
+            "STRIPE_SECRET_KEY": "pk_test_v1amvR35uoCNduJfkqGB8RLD",
+            "DB": "mongodb+srv://vic:Mafiamoves1@cluster0-miyyx.mongodb.net/test?retryWrites=true&w=majority"
+          }
+        }
+      },
+      "DependsOn": [
+        "CreateTransactionLogGroup",
+        "IamRoleLambdaExecution"
+      ]
+    },
+    "CreateTransactionLambdaVersionrUMyAvO0RSitsThcLit1iSrXsazwAUFzU617UxHXqE": {
+      "Type": "AWS::Lambda::Version",
+      "DeletionPolicy": "Retain",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "CreateTransactionLambdaFunction"
+        },
+        "CodeSha256": "9NnHJkrQHbWj/gNZfUEk8NQ6sPC09+zw2kXTi4sNQak="
+      }
+    },
+    "GetOneTransactionLambdaFunction": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Ref": "ServerlessDeploymentBucket"
+          },
+          "S3Key": "serverless/pareto-serverless-mongo/prod/1584033694729-2020-03-12T17:21:34.729Z/pareto-serverless-mongo.zip"
+        },
+        "FunctionName": "pareto-serverless-mongo-prod-getOneTransaction",
+        "Handler": "transaction.getOne",
+        "MemorySize": 128,
+        "Role": {
+          "Fn::GetAtt": [
+            "IamRoleLambdaExecution",
+            "Arn"
+          ]
+        },
+        "Runtime": "nodejs10.x",
+        "Timeout": 10,
+        "Environment": {
+          "Variables": {
+            "STRIPE_SECRET_KEY": "pk_test_v1amvR35uoCNduJfkqGB8RLD",
+            "DB": "mongodb+srv://vic:Mafiamoves1@cluster0-miyyx.mongodb.net/test?retryWrites=true&w=majority"
+          }
+        }
+      },
+      "DependsOn": [
+        "GetOneTransactionLogGroup",
+        "IamRoleLambdaExecution"
+      ]
+    },
+    "GetOneTransactionLambdaVersiona0bDEz0MXp4X4VSUWupZAQMPcCvK3jANLf2Zs3LtI": {
+      "Type": "AWS::Lambda::Version",
+      "DeletionPolicy": "Retain",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "GetOneTransactionLambdaFunction"
+        },
+        "CodeSha256": "9NnHJkrQHbWj/gNZfUEk8NQ6sPC09+zw2kXTi4sNQak="
+      }
+    },
+    "GetAllTransactionLambdaFunction": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Ref": "ServerlessDeploymentBucket"
+          },
+          "S3Key": "serverless/pareto-serverless-mongo/prod/1584033694729-2020-03-12T17:21:34.729Z/pareto-serverless-mongo.zip"
+        },
+        "FunctionName": "pareto-serverless-mongo-prod-getAllTransaction",
+        "Handler": "transaction.getAll",
+        "MemorySize": 128,
+        "Role": {
+          "Fn::GetAtt": [
+            "IamRoleLambdaExecution",
+            "Arn"
+          ]
+        },
+        "Runtime": "nodejs10.x",
+        "Timeout": 10,
+        "Environment": {
+          "Variables": {
+            "STRIPE_SECRET_KEY": "pk_test_v1amvR35uoCNduJfkqGB8RLD",
+            "DB": "mongodb+srv://vic:Mafiamoves1@cluster0-miyyx.mongodb.net/test?retryWrites=true&w=majority"
+          }
+        }
+      },
+      "DependsOn": [
+        "GetAllTransactionLogGroup",
+        "IamRoleLambdaExecution"
+      ]
+    },
+    "GetAllTransactionLambdaVersionmiD8Y19foOTqsMeH3r65TbqaN2cFYcxrQzcOBVDx8": {
+      "Type": "AWS::Lambda::Version",
+      "DeletionPolicy": "Retain",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "GetAllTransactionLambdaFunction"
+        },
+        "CodeSha256": "9NnHJkrQHbWj/gNZfUEk8NQ6sPC09+zw2kXTi4sNQak="
+      }
+    },
+    "UpdateTransactionLambdaFunction": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Ref": "ServerlessDeploymentBucket"
+          },
+          "S3Key": "serverless/pareto-serverless-mongo/prod/1584033694729-2020-03-12T17:21:34.729Z/pareto-serverless-mongo.zip"
+        },
+        "FunctionName": "pareto-serverless-mongo-prod-updateTransaction",
+        "Handler": "transaction.update",
+        "MemorySize": 128,
+        "Role": {
+          "Fn::GetAtt": [
+            "IamRoleLambdaExecution",
+            "Arn"
+          ]
+        },
+        "Runtime": "nodejs10.x",
+        "Timeout": 10,
+        "Environment": {
+          "Variables": {
+            "STRIPE_SECRET_KEY": "pk_test_v1amvR35uoCNduJfkqGB8RLD",
+            "DB": "mongodb+srv://vic:Mafiamoves1@cluster0-miyyx.mongodb.net/test?retryWrites=true&w=majority"
+          }
+        }
+      },
+      "DependsOn": [
+        "UpdateTransactionLogGroup",
+        "IamRoleLambdaExecution"
+      ]
+    },
+    "UpdateTransactionLambdaVersionqQs99FJeRAguLl4jPobUAma4IS53LnbXn1RfULB88": {
+      "Type": "AWS::Lambda::Version",
+      "DeletionPolicy": "Retain",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "UpdateTransactionLambdaFunction"
+        },
+        "CodeSha256": "9NnHJkrQHbWj/gNZfUEk8NQ6sPC09+zw2kXTi4sNQak="
+      }
+    },
+    "DeleteTransactionLambdaFunction": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Ref": "ServerlessDeploymentBucket"
+          },
+          "S3Key": "serverless/pareto-serverless-mongo/prod/1584033694729-2020-03-12T17:21:34.729Z/pareto-serverless-mongo.zip"
+        },
+        "FunctionName": "pareto-serverless-mongo-prod-deleteTransaction",
+        "Handler": "transaction.delete",
+        "MemorySize": 128,
+        "Role": {
+          "Fn::GetAtt": [
+            "IamRoleLambdaExecution",
+            "Arn"
+          ]
+        },
+        "Runtime": "nodejs10.x",
+        "Timeout": 10,
+        "Environment": {
+          "Variables": {
+            "STRIPE_SECRET_KEY": "pk_test_v1amvR35uoCNduJfkqGB8RLD",
+            "DB": "mongodb+srv://vic:Mafiamoves1@cluster0-miyyx.mongodb.net/test?retryWrites=true&w=majority"
+          }
+        }
+      },
+      "DependsOn": [
+        "DeleteTransactionLogGroup",
+        "IamRoleLambdaExecution"
+      ]
+    },
+    "DeleteTransactionLambdaVersionGCYmGsJ6aihI1qQcvjiTdvtXgzBYIW5Xd3hchxvxs": {
+      "Type": "AWS::Lambda::Version",
+      "DeletionPolicy": "Retain",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "DeleteTransactionLambdaFunction"
+        },
+        "CodeSha256": "9NnHJkrQHbWj/gNZfUEk8NQ6sPC09+zw2kXTi4sNQak="
       }
     },
     "ApiGatewayRestApi": {
@@ -498,6 +738,33 @@
           ]
         },
         "PathPart": "billing",
+        "RestApiId": {
+          "Ref": "ApiGatewayRestApi"
+        }
+      }
+    },
+    "ApiGatewayResourceTransaction": {
+      "Type": "AWS::ApiGateway::Resource",
+      "Properties": {
+        "ParentId": {
+          "Fn::GetAtt": [
+            "ApiGatewayRestApi",
+            "RootResourceId"
+          ]
+        },
+        "PathPart": "transaction",
+        "RestApiId": {
+          "Ref": "ApiGatewayRestApi"
+        }
+      }
+    },
+    "ApiGatewayResourceTransactionIdVar": {
+      "Type": "AWS::ApiGateway::Resource",
+      "Properties": {
+        "ParentId": {
+          "Ref": "ApiGatewayResourceTransaction"
+        },
+        "PathPart": "{id}",
         "RestApiId": {
           "Ref": "ApiGatewayRestApi"
         }
@@ -685,6 +952,100 @@
         },
         "ResourceId": {
           "Ref": "ApiGatewayResourceBilling"
+        },
+        "RestApiId": {
+          "Ref": "ApiGatewayRestApi"
+        }
+      }
+    },
+    "ApiGatewayMethodTransactionOptions": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "AuthorizationType": "NONE",
+        "HttpMethod": "OPTIONS",
+        "MethodResponses": [
+          {
+            "StatusCode": "200",
+            "ResponseParameters": {
+              "method.response.header.Access-Control-Allow-Origin": true,
+              "method.response.header.Access-Control-Allow-Headers": true,
+              "method.response.header.Access-Control-Allow-Methods": true,
+              "method.response.header.Access-Control-Allow-Credentials": true
+            },
+            "ResponseModels": {}
+          }
+        ],
+        "RequestParameters": {},
+        "Integration": {
+          "Type": "MOCK",
+          "RequestTemplates": {
+            "application/json": "{statusCode:200}"
+          },
+          "ContentHandling": "CONVERT_TO_TEXT",
+          "IntegrationResponses": [
+            {
+              "StatusCode": "200",
+              "ResponseParameters": {
+                "method.response.header.Access-Control-Allow-Origin": "'*'",
+                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,X-Amz-User-Agent'",
+                "method.response.header.Access-Control-Allow-Methods": "'OPTIONS,GET,POST'",
+                "method.response.header.Access-Control-Allow-Credentials": "'false'"
+              },
+              "ResponseTemplates": {
+                "application/json": "#set($origin = $input.params(\"Origin\"))\n#if($origin == \"\") #set($origin = $input.params(\"origin\")) #end\n#if($origin.matches(\".*\")) #set($context.responseOverride.header.Access-Control-Allow-Origin = $origin) #end"
+              }
+            }
+          ]
+        },
+        "ResourceId": {
+          "Ref": "ApiGatewayResourceTransaction"
+        },
+        "RestApiId": {
+          "Ref": "ApiGatewayRestApi"
+        }
+      }
+    },
+    "ApiGatewayMethodTransactionIdVarOptions": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "AuthorizationType": "NONE",
+        "HttpMethod": "OPTIONS",
+        "MethodResponses": [
+          {
+            "StatusCode": "200",
+            "ResponseParameters": {
+              "method.response.header.Access-Control-Allow-Origin": true,
+              "method.response.header.Access-Control-Allow-Headers": true,
+              "method.response.header.Access-Control-Allow-Methods": true,
+              "method.response.header.Access-Control-Allow-Credentials": true
+            },
+            "ResponseModels": {}
+          }
+        ],
+        "RequestParameters": {},
+        "Integration": {
+          "Type": "MOCK",
+          "RequestTemplates": {
+            "application/json": "{statusCode:200}"
+          },
+          "ContentHandling": "CONVERT_TO_TEXT",
+          "IntegrationResponses": [
+            {
+              "StatusCode": "200",
+              "ResponseParameters": {
+                "method.response.header.Access-Control-Allow-Origin": "'*'",
+                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,X-Amz-User-Agent'",
+                "method.response.header.Access-Control-Allow-Methods": "'OPTIONS,DELETE,PUT,GET'",
+                "method.response.header.Access-Control-Allow-Credentials": "'false'"
+              },
+              "ResponseTemplates": {
+                "application/json": "#set($origin = $input.params(\"Origin\"))\n#if($origin == \"\") #set($origin = $input.params(\"origin\")) #end\n#if($origin.matches(\".*\")) #set($context.responseOverride.header.Access-Control-Allow-Origin = $origin) #end"
+              }
+            }
+          ]
+        },
+        "ResourceId": {
+          "Ref": "ApiGatewayResourceTransactionIdVar"
         },
         "RestApiId": {
           "Ref": "ApiGatewayRestApi"
@@ -992,7 +1353,222 @@
         "MethodResponses": []
       }
     },
-    "ApiGatewayDeployment1583865608447": {
+    "ApiGatewayMethodTransactionPost": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "HttpMethod": "POST",
+        "RequestParameters": {},
+        "ResourceId": {
+          "Ref": "ApiGatewayResourceTransaction"
+        },
+        "RestApiId": {
+          "Ref": "ApiGatewayRestApi"
+        },
+        "ApiKeyRequired": false,
+        "AuthorizationType": "NONE",
+        "Integration": {
+          "IntegrationHttpMethod": "POST",
+          "Type": "AWS_PROXY",
+          "Uri": {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":apigateway:",
+                {
+                  "Ref": "AWS::Region"
+                },
+                ":lambda:path/2015-03-31/functions/",
+                {
+                  "Fn::GetAtt": [
+                    "CreateTransactionLambdaFunction",
+                    "Arn"
+                  ]
+                },
+                "/invocations"
+              ]
+            ]
+          }
+        },
+        "MethodResponses": []
+      }
+    },
+    "ApiGatewayMethodTransactionIdVarGet": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "HttpMethod": "GET",
+        "RequestParameters": {},
+        "ResourceId": {
+          "Ref": "ApiGatewayResourceTransactionIdVar"
+        },
+        "RestApiId": {
+          "Ref": "ApiGatewayRestApi"
+        },
+        "ApiKeyRequired": false,
+        "AuthorizationType": "NONE",
+        "Integration": {
+          "IntegrationHttpMethod": "POST",
+          "Type": "AWS_PROXY",
+          "Uri": {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":apigateway:",
+                {
+                  "Ref": "AWS::Region"
+                },
+                ":lambda:path/2015-03-31/functions/",
+                {
+                  "Fn::GetAtt": [
+                    "GetOneTransactionLambdaFunction",
+                    "Arn"
+                  ]
+                },
+                "/invocations"
+              ]
+            ]
+          }
+        },
+        "MethodResponses": []
+      }
+    },
+    "ApiGatewayMethodTransactionGet": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "HttpMethod": "GET",
+        "RequestParameters": {},
+        "ResourceId": {
+          "Ref": "ApiGatewayResourceTransaction"
+        },
+        "RestApiId": {
+          "Ref": "ApiGatewayRestApi"
+        },
+        "ApiKeyRequired": false,
+        "AuthorizationType": "NONE",
+        "Integration": {
+          "IntegrationHttpMethod": "POST",
+          "Type": "AWS_PROXY",
+          "Uri": {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":apigateway:",
+                {
+                  "Ref": "AWS::Region"
+                },
+                ":lambda:path/2015-03-31/functions/",
+                {
+                  "Fn::GetAtt": [
+                    "GetAllTransactionLambdaFunction",
+                    "Arn"
+                  ]
+                },
+                "/invocations"
+              ]
+            ]
+          }
+        },
+        "MethodResponses": []
+      }
+    },
+    "ApiGatewayMethodTransactionIdVarPut": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "HttpMethod": "PUT",
+        "RequestParameters": {},
+        "ResourceId": {
+          "Ref": "ApiGatewayResourceTransactionIdVar"
+        },
+        "RestApiId": {
+          "Ref": "ApiGatewayRestApi"
+        },
+        "ApiKeyRequired": false,
+        "AuthorizationType": "NONE",
+        "Integration": {
+          "IntegrationHttpMethod": "POST",
+          "Type": "AWS_PROXY",
+          "Uri": {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":apigateway:",
+                {
+                  "Ref": "AWS::Region"
+                },
+                ":lambda:path/2015-03-31/functions/",
+                {
+                  "Fn::GetAtt": [
+                    "UpdateTransactionLambdaFunction",
+                    "Arn"
+                  ]
+                },
+                "/invocations"
+              ]
+            ]
+          }
+        },
+        "MethodResponses": []
+      }
+    },
+    "ApiGatewayMethodTransactionIdVarDelete": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "HttpMethod": "DELETE",
+        "RequestParameters": {},
+        "ResourceId": {
+          "Ref": "ApiGatewayResourceTransactionIdVar"
+        },
+        "RestApiId": {
+          "Ref": "ApiGatewayRestApi"
+        },
+        "ApiKeyRequired": false,
+        "AuthorizationType": "NONE",
+        "Integration": {
+          "IntegrationHttpMethod": "POST",
+          "Type": "AWS_PROXY",
+          "Uri": {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":apigateway:",
+                {
+                  "Ref": "AWS::Region"
+                },
+                ":lambda:path/2015-03-31/functions/",
+                {
+                  "Fn::GetAtt": [
+                    "DeleteTransactionLambdaFunction",
+                    "Arn"
+                  ]
+                },
+                "/invocations"
+              ]
+            ]
+          }
+        },
+        "MethodResponses": []
+      }
+    },
+    "ApiGatewayDeployment1584033657352": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -1005,13 +1581,20 @@
         "ApiGatewayMethodUsersOptions",
         "ApiGatewayMethodUsersIdVarOptions",
         "ApiGatewayMethodBillingOptions",
+        "ApiGatewayMethodTransactionOptions",
+        "ApiGatewayMethodTransactionIdVarOptions",
         "ApiGatewayMethodEmailPost",
         "ApiGatewayMethodUsersPost",
         "ApiGatewayMethodUsersIdVarGet",
         "ApiGatewayMethodUsersGet",
         "ApiGatewayMethodUsersIdVarPut",
         "ApiGatewayMethodUsersIdVarDelete",
-        "ApiGatewayMethodBillingPost"
+        "ApiGatewayMethodBillingPost",
+        "ApiGatewayMethodTransactionPost",
+        "ApiGatewayMethodTransactionIdVarGet",
+        "ApiGatewayMethodTransactionGet",
+        "ApiGatewayMethodTransactionIdVarPut",
+        "ApiGatewayMethodTransactionIdVarDelete"
       ]
     },
     "EmailLambdaPermissionApiGateway": {
@@ -1272,6 +1855,191 @@
           ]
         }
       }
+    },
+    "CreateTransactionLambdaPermissionApiGateway": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "CreateTransactionLambdaFunction",
+            "Arn"
+          ]
+        },
+        "Action": "lambda:InvokeFunction",
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":execute-api:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":",
+              {
+                "Ref": "ApiGatewayRestApi"
+              },
+              "/*/*"
+            ]
+          ]
+        }
+      }
+    },
+    "GetOneTransactionLambdaPermissionApiGateway": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "GetOneTransactionLambdaFunction",
+            "Arn"
+          ]
+        },
+        "Action": "lambda:InvokeFunction",
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":execute-api:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":",
+              {
+                "Ref": "ApiGatewayRestApi"
+              },
+              "/*/*"
+            ]
+          ]
+        }
+      }
+    },
+    "GetAllTransactionLambdaPermissionApiGateway": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "GetAllTransactionLambdaFunction",
+            "Arn"
+          ]
+        },
+        "Action": "lambda:InvokeFunction",
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":execute-api:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":",
+              {
+                "Ref": "ApiGatewayRestApi"
+              },
+              "/*/*"
+            ]
+          ]
+        }
+      }
+    },
+    "UpdateTransactionLambdaPermissionApiGateway": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "UpdateTransactionLambdaFunction",
+            "Arn"
+          ]
+        },
+        "Action": "lambda:InvokeFunction",
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":execute-api:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":",
+              {
+                "Ref": "ApiGatewayRestApi"
+              },
+              "/*/*"
+            ]
+          ]
+        }
+      }
+    },
+    "DeleteTransactionLambdaPermissionApiGateway": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "DeleteTransactionLambdaFunction",
+            "Arn"
+          ]
+        },
+        "Action": "lambda:InvokeFunction",
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":execute-api:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":",
+              {
+                "Ref": "ApiGatewayRestApi"
+              },
+              "/*/*"
+            ]
+          ]
+        }
+      }
     }
   },
   "Outputs": {
@@ -1283,43 +2051,73 @@
     "EmailLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "EmailLambdaVersiongvNu93vu6VfAptXQl1LsrpMFA6bV2SoXfg0nowiAc"
+        "Ref": "EmailLambdaVersionvvI1USnHfk9PKBshedGWUfjchEGaHzUEuBk16iAkY"
       }
     },
     "CreateUserLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "CreateUserLambdaVersionRTdaCnxxUiZXFTEuLCP4nAna236rWfZxB4xeTiZNJ8g"
+        "Ref": "CreateUserLambdaVersionBOk8Q4ojDsDJ78EkENsYy6W5NsWq2Y0SQpxrryq7Rc"
       }
     },
     "GetOneUserLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "GetOneUserLambdaVersionlH06UyTeXgvfwd9xVl5OnJueyh85kjf4ciU3aGOkeA"
+        "Ref": "GetOneUserLambdaVersioneeFAmtnn9sdvodT3HUWiKSYLi3Hj1y8HYfzsxcuOfYk"
       }
     },
     "GetAllUsersLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "GetAllUsersLambdaVersionQI54jcec9a7Xi423rG2rJrIdGbx4wVBrmOySr6Teg"
+        "Ref": "GetAllUsersLambdaVersion0JblQEDcOtaaU5aCLf9y90sAjqMhn5Uf6LjuFPRg"
       }
     },
     "UpdateUserLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "UpdateUserLambdaVersion1GO1FOmyjEa7ZU2qdMZi7EJrusAtlVR03VkXZIY3JA"
+        "Ref": "UpdateUserLambdaVersionuFuBz9fXbVdb0aCOBE1h2sgTmYBj5TfLB4EET4faDyk"
       }
     },
     "DeleteUserLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "DeleteUserLambdaVersionQxALZZRPo4M60XCcW00IQiFb2NXIUlmcjmpSzjURr4"
+        "Ref": "DeleteUserLambdaVersionDdJvxfV6sVk2BCdgFk0uQSGLQOyZia8bJYzIFneNag"
       }
     },
     "BillingLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "BillingLambdaVersion6nhORrt7fs6YDtb8ryDm3jyJD2z2XHqCrzFOFG3Rk"
+        "Ref": "BillingLambdaVersionpXhtVxNIX2PktWH9QMrRqHVB4AIxGHklLml5KJhTjjM"
+      }
+    },
+    "CreateTransactionLambdaFunctionQualifiedArn": {
+      "Description": "Current Lambda function version",
+      "Value": {
+        "Ref": "CreateTransactionLambdaVersionrUMyAvO0RSitsThcLit1iSrXsazwAUFzU617UxHXqE"
+      }
+    },
+    "GetOneTransactionLambdaFunctionQualifiedArn": {
+      "Description": "Current Lambda function version",
+      "Value": {
+        "Ref": "GetOneTransactionLambdaVersiona0bDEz0MXp4X4VSUWupZAQMPcCvK3jANLf2Zs3LtI"
+      }
+    },
+    "GetAllTransactionLambdaFunctionQualifiedArn": {
+      "Description": "Current Lambda function version",
+      "Value": {
+        "Ref": "GetAllTransactionLambdaVersionmiD8Y19foOTqsMeH3r65TbqaN2cFYcxrQzcOBVDx8"
+      }
+    },
+    "UpdateTransactionLambdaFunctionQualifiedArn": {
+      "Description": "Current Lambda function version",
+      "Value": {
+        "Ref": "UpdateTransactionLambdaVersionqQs99FJeRAguLl4jPobUAma4IS53LnbXn1RfULB88"
+      }
+    },
+    "DeleteTransactionLambdaFunctionQualifiedArn": {
+      "Description": "Current Lambda function version",
+      "Value": {
+        "Ref": "DeleteTransactionLambdaVersionGCYmGsJ6aihI1qQcvjiTdvtXgzBYIW5Xd3hchxvxs"
       }
     },
     "ServiceEndpoint": {

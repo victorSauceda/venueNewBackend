@@ -91,3 +91,48 @@ functions:
           path: billing
           method: post
           cors: true
+  createTransaction:
+    handler: transaction.create
+    environment:
+      DB: ${ssm:mongo}
+    events:
+      - http:
+          path: transaction
+          method: post
+          cors: true
+  getOneTransaction:
+    handler: transaction.getOne
+    environment:
+      DB: ${ssm:mongo}
+    events:
+      - http:
+          path: transaction/{id}
+          method: get
+          cors: true
+  getAllTransaction:
+    handler: transaction.getAll
+    environment:
+      DB: ${ssm:mongo}
+    events:
+      - http:
+          path: transaction
+          method: get
+          cors: true
+  updateTransaction:
+    handler: transaction.update
+    environment:
+      DB: ${ssm:mongo}
+    events:
+      - http:
+          path: transaction/{id}
+          method: put
+          cors: true
+  deleteTransaction:
+    handler: transaction.delete
+    environment:
+      DB: ${ssm:mongo}
+    events:
+      - http:
+          path: transaction/{id}
+          method: delete
+          cors: true
