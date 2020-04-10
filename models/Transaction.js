@@ -1,22 +1,17 @@
 const mongoose = require("mongoose");
-const TransactionSchema = new mongoose.Schema(
-  {
-    // restId: Schema.Types.ObjectId,
-    // custId: Schema.Types.ObjectId,
-    // orderId: Schema.Types.ObjectId,
-    // createdAt: { type: Date, default: Date.now },
-    // restName: String,
+const TransactionSchema = new mongoose.Schema({
+  restaurantId: String,
+  orderId: String,
+  createdAt: Number,
+  restaurantName: String,
+  customerName: String,
+  salesTax: String,
+  total: Number,
+  cartItems: Array
+});
 
-    // custName: String,
-    // distance: Number,
-    // dietType: String,
-    // salesTax: Number,
-    // total: Number,
-    // cartItems: Array
-    name: String,
-    amount: Number
-  },
-  { timestamps: true }
-);
+//Add customer phone number
+//discount
+//total qty
 
 export default mongoose.model("Transaction", TransactionSchema);

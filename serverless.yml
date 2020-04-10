@@ -13,6 +13,7 @@ custom:
   webpack:
     webpackConfig: ./webpack.config.js
     includeModules: true
+  bucket: venueappimages
 
 provider:
   name: aws
@@ -27,6 +28,11 @@ provider:
       Action:
         - "ses:SendEmail"
       Resource: "*"
+    - Effect: "Allow"
+      Action:
+        - "s3:PutObject"
+        - "s3:PutObjectAcl"
+      Resource: "arn:aws:s3:::${self:custom.bucket}/*"
 
 functions:
   email:
@@ -135,4 +141,58 @@ functions:
       - http:
           path: transaction/{id}
           method: delete
+          cors: true
+  createMenuItems:
+    handler: menuitems.create
+    environment:
+      DB: ${ssm:mongo}
+    events:
+      - http:
+          path: admin/menuitems
+          method: post
+          cors: true
+  getOneMenuItems:
+    handler: menuitems.getOne
+    environment:
+      DB: ${ssm:mongo}
+    events:
+      - http:
+          path: admin/menuitems/{id}
+          method: get
+          cors: true
+  getAllMenuItems:
+    handler: menuitems.getAll
+    environment:
+      DB: ${ssm:mongo}
+    events:
+      - http:
+          path: admin/menuitems
+          method: get
+          cors: true
+  updateMenuItems:
+    handler: menuitems.update
+    environment:
+      DB: ${ssm:mongo}
+    events:
+      - http:
+          path: admin/menuitems/{id}
+          method: put
+          cors: true
+  deleteMenuItems:
+    handler: menuitems.delete
+    environment:
+      DB: ${ssm:mongo}
+    events:
+      - http:
+          path: admin/menuitems/{id}
+          method: delete
+          cors: true
+  save:
+    handler: s3handler.save
+    environment:
+      BUCKET: ${self:custom.bucket}
+    events:
+      - http:
+          path: save
+          method: post
           cors: true

@@ -88,6 +88,42 @@
         "LogGroupName": "/aws/lambda/pareto-serverless-mongo-prod-deleteTransaction"
       }
     },
+    "CreateMenuItemsLogGroup": {
+      "Type": "AWS::Logs::LogGroup",
+      "Properties": {
+        "LogGroupName": "/aws/lambda/pareto-serverless-mongo-prod-createMenuItems"
+      }
+    },
+    "GetOneMenuItemsLogGroup": {
+      "Type": "AWS::Logs::LogGroup",
+      "Properties": {
+        "LogGroupName": "/aws/lambda/pareto-serverless-mongo-prod-getOneMenuItems"
+      }
+    },
+    "GetAllMenuItemsLogGroup": {
+      "Type": "AWS::Logs::LogGroup",
+      "Properties": {
+        "LogGroupName": "/aws/lambda/pareto-serverless-mongo-prod-getAllMenuItems"
+      }
+    },
+    "UpdateMenuItemsLogGroup": {
+      "Type": "AWS::Logs::LogGroup",
+      "Properties": {
+        "LogGroupName": "/aws/lambda/pareto-serverless-mongo-prod-updateMenuItems"
+      }
+    },
+    "DeleteMenuItemsLogGroup": {
+      "Type": "AWS::Logs::LogGroup",
+      "Properties": {
+        "LogGroupName": "/aws/lambda/pareto-serverless-mongo-prod-deleteMenuItems"
+      }
+    },
+    "SaveLogGroup": {
+      "Type": "AWS::Logs::LogGroup",
+      "Properties": {
+        "LogGroupName": "/aws/lambda/pareto-serverless-mongo-prod-save"
+      }
+    },
     "IamRoleLambdaExecution": {
       "Type": "AWS::IAM::Role",
       "Properties": {
@@ -150,6 +186,14 @@
                     "ses:SendEmail"
                   ],
                   "Resource": "*"
+                },
+                {
+                  "Effect": "Allow",
+                  "Action": [
+                    "s3:PutObject",
+                    "s3:PutObjectAcl"
+                  ],
+                  "Resource": "arn:aws:s3:::venueappimages/*"
                 }
               ]
             }
@@ -178,7 +222,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/pareto-serverless-mongo/prod/1584033694729-2020-03-12T17:21:34.729Z/pareto-serverless-mongo.zip"
+          "S3Key": "serverless/pareto-serverless-mongo/prod/1586384398050-2020-04-08T22:19:58.050Z/pareto-serverless-mongo.zip"
         },
         "FunctionName": "pareto-serverless-mongo-prod-email",
         "Handler": "email.main",
@@ -203,14 +247,14 @@
         "IamRoleLambdaExecution"
       ]
     },
-    "EmailLambdaVersionvvI1USnHfk9PKBshedGWUfjchEGaHzUEuBk16iAkY": {
+    "EmailLambdaVersionBcfLQB4dkEIO16gib485HlueyaKmLsBs8KFYuvS33g": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "EmailLambdaFunction"
         },
-        "CodeSha256": "9NnHJkrQHbWj/gNZfUEk8NQ6sPC09+zw2kXTi4sNQak="
+        "CodeSha256": "u9ixXfRZmfz1J9GxWcgkG90Idp2AG46oww+g9U4TIMM="
       }
     },
     "CreateUserLambdaFunction": {
@@ -220,7 +264,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/pareto-serverless-mongo/prod/1584033694729-2020-03-12T17:21:34.729Z/pareto-serverless-mongo.zip"
+          "S3Key": "serverless/pareto-serverless-mongo/prod/1586384398050-2020-04-08T22:19:58.050Z/pareto-serverless-mongo.zip"
         },
         "FunctionName": "pareto-serverless-mongo-prod-createUser",
         "Handler": "users.create",
@@ -245,14 +289,14 @@
         "IamRoleLambdaExecution"
       ]
     },
-    "CreateUserLambdaVersionBOk8Q4ojDsDJ78EkENsYy6W5NsWq2Y0SQpxrryq7Rc": {
+    "CreateUserLambdaVersionDZXdK19SxLUBwsLF0blmQl5sNAuierxUdoCaWQG5c": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "CreateUserLambdaFunction"
         },
-        "CodeSha256": "9NnHJkrQHbWj/gNZfUEk8NQ6sPC09+zw2kXTi4sNQak="
+        "CodeSha256": "u9ixXfRZmfz1J9GxWcgkG90Idp2AG46oww+g9U4TIMM="
       }
     },
     "GetOneUserLambdaFunction": {
@@ -262,7 +306,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/pareto-serverless-mongo/prod/1584033694729-2020-03-12T17:21:34.729Z/pareto-serverless-mongo.zip"
+          "S3Key": "serverless/pareto-serverless-mongo/prod/1586384398050-2020-04-08T22:19:58.050Z/pareto-serverless-mongo.zip"
         },
         "FunctionName": "pareto-serverless-mongo-prod-getOneUser",
         "Handler": "users.getOne",
@@ -287,14 +331,14 @@
         "IamRoleLambdaExecution"
       ]
     },
-    "GetOneUserLambdaVersioneeFAmtnn9sdvodT3HUWiKSYLi3Hj1y8HYfzsxcuOfYk": {
+    "GetOneUserLambdaVersionnXgYesPxzJ8xNKXDqyCLVi6nPz3fjlzxQq2fxGZDLw": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "GetOneUserLambdaFunction"
         },
-        "CodeSha256": "9NnHJkrQHbWj/gNZfUEk8NQ6sPC09+zw2kXTi4sNQak="
+        "CodeSha256": "u9ixXfRZmfz1J9GxWcgkG90Idp2AG46oww+g9U4TIMM="
       }
     },
     "GetAllUsersLambdaFunction": {
@@ -304,7 +348,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/pareto-serverless-mongo/prod/1584033694729-2020-03-12T17:21:34.729Z/pareto-serverless-mongo.zip"
+          "S3Key": "serverless/pareto-serverless-mongo/prod/1586384398050-2020-04-08T22:19:58.050Z/pareto-serverless-mongo.zip"
         },
         "FunctionName": "pareto-serverless-mongo-prod-getAllUsers",
         "Handler": "users.getAll",
@@ -329,14 +373,14 @@
         "IamRoleLambdaExecution"
       ]
     },
-    "GetAllUsersLambdaVersion0JblQEDcOtaaU5aCLf9y90sAjqMhn5Uf6LjuFPRg": {
+    "GetAllUsersLambdaVersionNnEsFQ3BDQIXiQurJAgc8bbXrZnUV2C4HkHnwxRRSf0": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "GetAllUsersLambdaFunction"
         },
-        "CodeSha256": "9NnHJkrQHbWj/gNZfUEk8NQ6sPC09+zw2kXTi4sNQak="
+        "CodeSha256": "u9ixXfRZmfz1J9GxWcgkG90Idp2AG46oww+g9U4TIMM="
       }
     },
     "UpdateUserLambdaFunction": {
@@ -346,7 +390,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/pareto-serverless-mongo/prod/1584033694729-2020-03-12T17:21:34.729Z/pareto-serverless-mongo.zip"
+          "S3Key": "serverless/pareto-serverless-mongo/prod/1586384398050-2020-04-08T22:19:58.050Z/pareto-serverless-mongo.zip"
         },
         "FunctionName": "pareto-serverless-mongo-prod-updateUser",
         "Handler": "users.update",
@@ -371,14 +415,14 @@
         "IamRoleLambdaExecution"
       ]
     },
-    "UpdateUserLambdaVersionuFuBz9fXbVdb0aCOBE1h2sgTmYBj5TfLB4EET4faDyk": {
+    "UpdateUserLambdaVersionOpgSERX76ly5S0gydCHg3KQZlDMkbRT43mkr4nBY": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "UpdateUserLambdaFunction"
         },
-        "CodeSha256": "9NnHJkrQHbWj/gNZfUEk8NQ6sPC09+zw2kXTi4sNQak="
+        "CodeSha256": "u9ixXfRZmfz1J9GxWcgkG90Idp2AG46oww+g9U4TIMM="
       }
     },
     "DeleteUserLambdaFunction": {
@@ -388,7 +432,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/pareto-serverless-mongo/prod/1584033694729-2020-03-12T17:21:34.729Z/pareto-serverless-mongo.zip"
+          "S3Key": "serverless/pareto-serverless-mongo/prod/1586384398050-2020-04-08T22:19:58.050Z/pareto-serverless-mongo.zip"
         },
         "FunctionName": "pareto-serverless-mongo-prod-deleteUser",
         "Handler": "users.delete",
@@ -413,14 +457,14 @@
         "IamRoleLambdaExecution"
       ]
     },
-    "DeleteUserLambdaVersionDdJvxfV6sVk2BCdgFk0uQSGLQOyZia8bJYzIFneNag": {
+    "DeleteUserLambdaVersionLcBlE8E4eH85LMT8c1wW18xE1ZldhKZizcEPtgg": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "DeleteUserLambdaFunction"
         },
-        "CodeSha256": "9NnHJkrQHbWj/gNZfUEk8NQ6sPC09+zw2kXTi4sNQak="
+        "CodeSha256": "u9ixXfRZmfz1J9GxWcgkG90Idp2AG46oww+g9U4TIMM="
       }
     },
     "BillingLambdaFunction": {
@@ -430,7 +474,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/pareto-serverless-mongo/prod/1584033694729-2020-03-12T17:21:34.729Z/pareto-serverless-mongo.zip"
+          "S3Key": "serverless/pareto-serverless-mongo/prod/1586384398050-2020-04-08T22:19:58.050Z/pareto-serverless-mongo.zip"
         },
         "FunctionName": "pareto-serverless-mongo-prod-billing",
         "Handler": "billing.main",
@@ -455,14 +499,14 @@
         "IamRoleLambdaExecution"
       ]
     },
-    "BillingLambdaVersionpXhtVxNIX2PktWH9QMrRqHVB4AIxGHklLml5KJhTjjM": {
+    "BillingLambdaVersiontYnR59EUhdXz565dzVuLppj3QUSYA0G67FB0Gi7bc": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "BillingLambdaFunction"
         },
-        "CodeSha256": "9NnHJkrQHbWj/gNZfUEk8NQ6sPC09+zw2kXTi4sNQak="
+        "CodeSha256": "u9ixXfRZmfz1J9GxWcgkG90Idp2AG46oww+g9U4TIMM="
       }
     },
     "CreateTransactionLambdaFunction": {
@@ -472,7 +516,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/pareto-serverless-mongo/prod/1584033694729-2020-03-12T17:21:34.729Z/pareto-serverless-mongo.zip"
+          "S3Key": "serverless/pareto-serverless-mongo/prod/1586384398050-2020-04-08T22:19:58.050Z/pareto-serverless-mongo.zip"
         },
         "FunctionName": "pareto-serverless-mongo-prod-createTransaction",
         "Handler": "transaction.create",
@@ -497,14 +541,14 @@
         "IamRoleLambdaExecution"
       ]
     },
-    "CreateTransactionLambdaVersionrUMyAvO0RSitsThcLit1iSrXsazwAUFzU617UxHXqE": {
+    "CreateTransactionLambdaVersionjuN2bPzxnJeZdkPADLEWhWWjTBszPTOsBzYt6pwrQ": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "CreateTransactionLambdaFunction"
         },
-        "CodeSha256": "9NnHJkrQHbWj/gNZfUEk8NQ6sPC09+zw2kXTi4sNQak="
+        "CodeSha256": "u9ixXfRZmfz1J9GxWcgkG90Idp2AG46oww+g9U4TIMM="
       }
     },
     "GetOneTransactionLambdaFunction": {
@@ -514,7 +558,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/pareto-serverless-mongo/prod/1584033694729-2020-03-12T17:21:34.729Z/pareto-serverless-mongo.zip"
+          "S3Key": "serverless/pareto-serverless-mongo/prod/1586384398050-2020-04-08T22:19:58.050Z/pareto-serverless-mongo.zip"
         },
         "FunctionName": "pareto-serverless-mongo-prod-getOneTransaction",
         "Handler": "transaction.getOne",
@@ -539,14 +583,14 @@
         "IamRoleLambdaExecution"
       ]
     },
-    "GetOneTransactionLambdaVersiona0bDEz0MXp4X4VSUWupZAQMPcCvK3jANLf2Zs3LtI": {
+    "GetOneTransactionLambdaVersionkWjqqLXmZFiteksxNWki2IUwj6G1YkYU3x7URB6h4I": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "GetOneTransactionLambdaFunction"
         },
-        "CodeSha256": "9NnHJkrQHbWj/gNZfUEk8NQ6sPC09+zw2kXTi4sNQak="
+        "CodeSha256": "u9ixXfRZmfz1J9GxWcgkG90Idp2AG46oww+g9U4TIMM="
       }
     },
     "GetAllTransactionLambdaFunction": {
@@ -556,7 +600,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/pareto-serverless-mongo/prod/1584033694729-2020-03-12T17:21:34.729Z/pareto-serverless-mongo.zip"
+          "S3Key": "serverless/pareto-serverless-mongo/prod/1586384398050-2020-04-08T22:19:58.050Z/pareto-serverless-mongo.zip"
         },
         "FunctionName": "pareto-serverless-mongo-prod-getAllTransaction",
         "Handler": "transaction.getAll",
@@ -581,14 +625,14 @@
         "IamRoleLambdaExecution"
       ]
     },
-    "GetAllTransactionLambdaVersionmiD8Y19foOTqsMeH3r65TbqaN2cFYcxrQzcOBVDx8": {
+    "GetAllTransactionLambdaVersion10Hpf79f5sHnjMErVJ01e01eE1HG7sSEhrv7f9b7Ht8": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "GetAllTransactionLambdaFunction"
         },
-        "CodeSha256": "9NnHJkrQHbWj/gNZfUEk8NQ6sPC09+zw2kXTi4sNQak="
+        "CodeSha256": "u9ixXfRZmfz1J9GxWcgkG90Idp2AG46oww+g9U4TIMM="
       }
     },
     "UpdateTransactionLambdaFunction": {
@@ -598,7 +642,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/pareto-serverless-mongo/prod/1584033694729-2020-03-12T17:21:34.729Z/pareto-serverless-mongo.zip"
+          "S3Key": "serverless/pareto-serverless-mongo/prod/1586384398050-2020-04-08T22:19:58.050Z/pareto-serverless-mongo.zip"
         },
         "FunctionName": "pareto-serverless-mongo-prod-updateTransaction",
         "Handler": "transaction.update",
@@ -623,14 +667,14 @@
         "IamRoleLambdaExecution"
       ]
     },
-    "UpdateTransactionLambdaVersionqQs99FJeRAguLl4jPobUAma4IS53LnbXn1RfULB88": {
+    "UpdateTransactionLambdaVersionSuprWiX29Egb1AYxh4GSSjpHlTOP2oIRWeBhToqU": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "UpdateTransactionLambdaFunction"
         },
-        "CodeSha256": "9NnHJkrQHbWj/gNZfUEk8NQ6sPC09+zw2kXTi4sNQak="
+        "CodeSha256": "u9ixXfRZmfz1J9GxWcgkG90Idp2AG46oww+g9U4TIMM="
       }
     },
     "DeleteTransactionLambdaFunction": {
@@ -640,7 +684,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/pareto-serverless-mongo/prod/1584033694729-2020-03-12T17:21:34.729Z/pareto-serverless-mongo.zip"
+          "S3Key": "serverless/pareto-serverless-mongo/prod/1586384398050-2020-04-08T22:19:58.050Z/pareto-serverless-mongo.zip"
         },
         "FunctionName": "pareto-serverless-mongo-prod-deleteTransaction",
         "Handler": "transaction.delete",
@@ -665,14 +709,267 @@
         "IamRoleLambdaExecution"
       ]
     },
-    "DeleteTransactionLambdaVersionGCYmGsJ6aihI1qQcvjiTdvtXgzBYIW5Xd3hchxvxs": {
+    "DeleteTransactionLambdaVersion3h40lWAQ3rGvSEdXgP2x7cKnQdCoFKosNnHAWj3hk": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "DeleteTransactionLambdaFunction"
         },
-        "CodeSha256": "9NnHJkrQHbWj/gNZfUEk8NQ6sPC09+zw2kXTi4sNQak="
+        "CodeSha256": "u9ixXfRZmfz1J9GxWcgkG90Idp2AG46oww+g9U4TIMM="
+      }
+    },
+    "CreateMenuItemsLambdaFunction": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Ref": "ServerlessDeploymentBucket"
+          },
+          "S3Key": "serverless/pareto-serverless-mongo/prod/1586384398050-2020-04-08T22:19:58.050Z/pareto-serverless-mongo.zip"
+        },
+        "FunctionName": "pareto-serverless-mongo-prod-createMenuItems",
+        "Handler": "menuitems.create",
+        "MemorySize": 128,
+        "Role": {
+          "Fn::GetAtt": [
+            "IamRoleLambdaExecution",
+            "Arn"
+          ]
+        },
+        "Runtime": "nodejs10.x",
+        "Timeout": 10,
+        "Environment": {
+          "Variables": {
+            "STRIPE_SECRET_KEY": "pk_test_v1amvR35uoCNduJfkqGB8RLD",
+            "DB": "mongodb+srv://vic:Mafiamoves1@cluster0-miyyx.mongodb.net/test?retryWrites=true&w=majority"
+          }
+        }
+      },
+      "DependsOn": [
+        "CreateMenuItemsLogGroup",
+        "IamRoleLambdaExecution"
+      ]
+    },
+    "CreateMenuItemsLambdaVersiondf6Jtp9o0f0QeawGaukq6gQJppDy6yDkkEcw7COw3Y": {
+      "Type": "AWS::Lambda::Version",
+      "DeletionPolicy": "Retain",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "CreateMenuItemsLambdaFunction"
+        },
+        "CodeSha256": "u9ixXfRZmfz1J9GxWcgkG90Idp2AG46oww+g9U4TIMM="
+      }
+    },
+    "GetOneMenuItemsLambdaFunction": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Ref": "ServerlessDeploymentBucket"
+          },
+          "S3Key": "serverless/pareto-serverless-mongo/prod/1586384398050-2020-04-08T22:19:58.050Z/pareto-serverless-mongo.zip"
+        },
+        "FunctionName": "pareto-serverless-mongo-prod-getOneMenuItems",
+        "Handler": "menuitems.getOne",
+        "MemorySize": 128,
+        "Role": {
+          "Fn::GetAtt": [
+            "IamRoleLambdaExecution",
+            "Arn"
+          ]
+        },
+        "Runtime": "nodejs10.x",
+        "Timeout": 10,
+        "Environment": {
+          "Variables": {
+            "STRIPE_SECRET_KEY": "pk_test_v1amvR35uoCNduJfkqGB8RLD",
+            "DB": "mongodb+srv://vic:Mafiamoves1@cluster0-miyyx.mongodb.net/test?retryWrites=true&w=majority"
+          }
+        }
+      },
+      "DependsOn": [
+        "GetOneMenuItemsLogGroup",
+        "IamRoleLambdaExecution"
+      ]
+    },
+    "GetOneMenuItemsLambdaVersionLIqW98aU3MIyukfWvgW4YH1SIRXfs1244YY9LfQ": {
+      "Type": "AWS::Lambda::Version",
+      "DeletionPolicy": "Retain",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "GetOneMenuItemsLambdaFunction"
+        },
+        "CodeSha256": "u9ixXfRZmfz1J9GxWcgkG90Idp2AG46oww+g9U4TIMM="
+      }
+    },
+    "GetAllMenuItemsLambdaFunction": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Ref": "ServerlessDeploymentBucket"
+          },
+          "S3Key": "serverless/pareto-serverless-mongo/prod/1586384398050-2020-04-08T22:19:58.050Z/pareto-serverless-mongo.zip"
+        },
+        "FunctionName": "pareto-serverless-mongo-prod-getAllMenuItems",
+        "Handler": "menuitems.getAll",
+        "MemorySize": 128,
+        "Role": {
+          "Fn::GetAtt": [
+            "IamRoleLambdaExecution",
+            "Arn"
+          ]
+        },
+        "Runtime": "nodejs10.x",
+        "Timeout": 10,
+        "Environment": {
+          "Variables": {
+            "STRIPE_SECRET_KEY": "pk_test_v1amvR35uoCNduJfkqGB8RLD",
+            "DB": "mongodb+srv://vic:Mafiamoves1@cluster0-miyyx.mongodb.net/test?retryWrites=true&w=majority"
+          }
+        }
+      },
+      "DependsOn": [
+        "GetAllMenuItemsLogGroup",
+        "IamRoleLambdaExecution"
+      ]
+    },
+    "GetAllMenuItemsLambdaVersionA442RQqauX2LGWWyxm64ceE57IJy9QQuU3dcG7a4kw": {
+      "Type": "AWS::Lambda::Version",
+      "DeletionPolicy": "Retain",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "GetAllMenuItemsLambdaFunction"
+        },
+        "CodeSha256": "u9ixXfRZmfz1J9GxWcgkG90Idp2AG46oww+g9U4TIMM="
+      }
+    },
+    "UpdateMenuItemsLambdaFunction": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Ref": "ServerlessDeploymentBucket"
+          },
+          "S3Key": "serverless/pareto-serverless-mongo/prod/1586384398050-2020-04-08T22:19:58.050Z/pareto-serverless-mongo.zip"
+        },
+        "FunctionName": "pareto-serverless-mongo-prod-updateMenuItems",
+        "Handler": "menuitems.update",
+        "MemorySize": 128,
+        "Role": {
+          "Fn::GetAtt": [
+            "IamRoleLambdaExecution",
+            "Arn"
+          ]
+        },
+        "Runtime": "nodejs10.x",
+        "Timeout": 10,
+        "Environment": {
+          "Variables": {
+            "STRIPE_SECRET_KEY": "pk_test_v1amvR35uoCNduJfkqGB8RLD",
+            "DB": "mongodb+srv://vic:Mafiamoves1@cluster0-miyyx.mongodb.net/test?retryWrites=true&w=majority"
+          }
+        }
+      },
+      "DependsOn": [
+        "UpdateMenuItemsLogGroup",
+        "IamRoleLambdaExecution"
+      ]
+    },
+    "UpdateMenuItemsLambdaVersionn3bRFb7wwiVAo9ZNJi02B86ZRjFXqUWGO8tVrXuyA": {
+      "Type": "AWS::Lambda::Version",
+      "DeletionPolicy": "Retain",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "UpdateMenuItemsLambdaFunction"
+        },
+        "CodeSha256": "u9ixXfRZmfz1J9GxWcgkG90Idp2AG46oww+g9U4TIMM="
+      }
+    },
+    "DeleteMenuItemsLambdaFunction": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Ref": "ServerlessDeploymentBucket"
+          },
+          "S3Key": "serverless/pareto-serverless-mongo/prod/1586384398050-2020-04-08T22:19:58.050Z/pareto-serverless-mongo.zip"
+        },
+        "FunctionName": "pareto-serverless-mongo-prod-deleteMenuItems",
+        "Handler": "menuitems.delete",
+        "MemorySize": 128,
+        "Role": {
+          "Fn::GetAtt": [
+            "IamRoleLambdaExecution",
+            "Arn"
+          ]
+        },
+        "Runtime": "nodejs10.x",
+        "Timeout": 10,
+        "Environment": {
+          "Variables": {
+            "STRIPE_SECRET_KEY": "pk_test_v1amvR35uoCNduJfkqGB8RLD",
+            "DB": "mongodb+srv://vic:Mafiamoves1@cluster0-miyyx.mongodb.net/test?retryWrites=true&w=majority"
+          }
+        }
+      },
+      "DependsOn": [
+        "DeleteMenuItemsLogGroup",
+        "IamRoleLambdaExecution"
+      ]
+    },
+    "DeleteMenuItemsLambdaVersion1FR4eRlyzb8HNxwLCwbkUzEFmayLzq3oCXF7qIzck": {
+      "Type": "AWS::Lambda::Version",
+      "DeletionPolicy": "Retain",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "DeleteMenuItemsLambdaFunction"
+        },
+        "CodeSha256": "u9ixXfRZmfz1J9GxWcgkG90Idp2AG46oww+g9U4TIMM="
+      }
+    },
+    "SaveLambdaFunction": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Ref": "ServerlessDeploymentBucket"
+          },
+          "S3Key": "serverless/pareto-serverless-mongo/prod/1586384398050-2020-04-08T22:19:58.050Z/pareto-serverless-mongo.zip"
+        },
+        "FunctionName": "pareto-serverless-mongo-prod-save",
+        "Handler": "s3handler.save",
+        "MemorySize": 128,
+        "Role": {
+          "Fn::GetAtt": [
+            "IamRoleLambdaExecution",
+            "Arn"
+          ]
+        },
+        "Runtime": "nodejs10.x",
+        "Timeout": 10,
+        "Environment": {
+          "Variables": {
+            "STRIPE_SECRET_KEY": "pk_test_v1amvR35uoCNduJfkqGB8RLD",
+            "DB": "mongodb+srv://vic:Mafiamoves1@cluster0-miyyx.mongodb.net/test?retryWrites=true&w=majority",
+            "BUCKET": "venueappimages"
+          }
+        }
+      },
+      "DependsOn": [
+        "SaveLogGroup",
+        "IamRoleLambdaExecution"
+      ]
+    },
+    "SaveLambdaVersioneRmeyPiUgdTPnTGnMcj9ARsqdu35GPQwAwJHmoOxbaQ": {
+      "Type": "AWS::Lambda::Version",
+      "DeletionPolicy": "Retain",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "SaveLambdaFunction"
+        },
+        "CodeSha256": "u9ixXfRZmfz1J9GxWcgkG90Idp2AG46oww+g9U4TIMM="
       }
     },
     "ApiGatewayRestApi": {
@@ -765,6 +1062,60 @@
           "Ref": "ApiGatewayResourceTransaction"
         },
         "PathPart": "{id}",
+        "RestApiId": {
+          "Ref": "ApiGatewayRestApi"
+        }
+      }
+    },
+    "ApiGatewayResourceAdmin": {
+      "Type": "AWS::ApiGateway::Resource",
+      "Properties": {
+        "ParentId": {
+          "Fn::GetAtt": [
+            "ApiGatewayRestApi",
+            "RootResourceId"
+          ]
+        },
+        "PathPart": "admin",
+        "RestApiId": {
+          "Ref": "ApiGatewayRestApi"
+        }
+      }
+    },
+    "ApiGatewayResourceAdminMenuitems": {
+      "Type": "AWS::ApiGateway::Resource",
+      "Properties": {
+        "ParentId": {
+          "Ref": "ApiGatewayResourceAdmin"
+        },
+        "PathPart": "menuitems",
+        "RestApiId": {
+          "Ref": "ApiGatewayRestApi"
+        }
+      }
+    },
+    "ApiGatewayResourceAdminMenuitemsIdVar": {
+      "Type": "AWS::ApiGateway::Resource",
+      "Properties": {
+        "ParentId": {
+          "Ref": "ApiGatewayResourceAdminMenuitems"
+        },
+        "PathPart": "{id}",
+        "RestApiId": {
+          "Ref": "ApiGatewayRestApi"
+        }
+      }
+    },
+    "ApiGatewayResourceSave": {
+      "Type": "AWS::ApiGateway::Resource",
+      "Properties": {
+        "ParentId": {
+          "Fn::GetAtt": [
+            "ApiGatewayRestApi",
+            "RootResourceId"
+          ]
+        },
+        "PathPart": "save",
         "RestApiId": {
           "Ref": "ApiGatewayRestApi"
         }
@@ -1046,6 +1397,147 @@
         },
         "ResourceId": {
           "Ref": "ApiGatewayResourceTransactionIdVar"
+        },
+        "RestApiId": {
+          "Ref": "ApiGatewayRestApi"
+        }
+      }
+    },
+    "ApiGatewayMethodAdminMenuitemsOptions": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "AuthorizationType": "NONE",
+        "HttpMethod": "OPTIONS",
+        "MethodResponses": [
+          {
+            "StatusCode": "200",
+            "ResponseParameters": {
+              "method.response.header.Access-Control-Allow-Origin": true,
+              "method.response.header.Access-Control-Allow-Headers": true,
+              "method.response.header.Access-Control-Allow-Methods": true,
+              "method.response.header.Access-Control-Allow-Credentials": true
+            },
+            "ResponseModels": {}
+          }
+        ],
+        "RequestParameters": {},
+        "Integration": {
+          "Type": "MOCK",
+          "RequestTemplates": {
+            "application/json": "{statusCode:200}"
+          },
+          "ContentHandling": "CONVERT_TO_TEXT",
+          "IntegrationResponses": [
+            {
+              "StatusCode": "200",
+              "ResponseParameters": {
+                "method.response.header.Access-Control-Allow-Origin": "'*'",
+                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,X-Amz-User-Agent'",
+                "method.response.header.Access-Control-Allow-Methods": "'OPTIONS,GET,POST'",
+                "method.response.header.Access-Control-Allow-Credentials": "'false'"
+              },
+              "ResponseTemplates": {
+                "application/json": "#set($origin = $input.params(\"Origin\"))\n#if($origin == \"\") #set($origin = $input.params(\"origin\")) #end\n#if($origin.matches(\".*\")) #set($context.responseOverride.header.Access-Control-Allow-Origin = $origin) #end"
+              }
+            }
+          ]
+        },
+        "ResourceId": {
+          "Ref": "ApiGatewayResourceAdminMenuitems"
+        },
+        "RestApiId": {
+          "Ref": "ApiGatewayRestApi"
+        }
+      }
+    },
+    "ApiGatewayMethodAdminMenuitemsIdVarOptions": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "AuthorizationType": "NONE",
+        "HttpMethod": "OPTIONS",
+        "MethodResponses": [
+          {
+            "StatusCode": "200",
+            "ResponseParameters": {
+              "method.response.header.Access-Control-Allow-Origin": true,
+              "method.response.header.Access-Control-Allow-Headers": true,
+              "method.response.header.Access-Control-Allow-Methods": true,
+              "method.response.header.Access-Control-Allow-Credentials": true
+            },
+            "ResponseModels": {}
+          }
+        ],
+        "RequestParameters": {},
+        "Integration": {
+          "Type": "MOCK",
+          "RequestTemplates": {
+            "application/json": "{statusCode:200}"
+          },
+          "ContentHandling": "CONVERT_TO_TEXT",
+          "IntegrationResponses": [
+            {
+              "StatusCode": "200",
+              "ResponseParameters": {
+                "method.response.header.Access-Control-Allow-Origin": "'*'",
+                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,X-Amz-User-Agent'",
+                "method.response.header.Access-Control-Allow-Methods": "'OPTIONS,DELETE,PUT,GET'",
+                "method.response.header.Access-Control-Allow-Credentials": "'false'"
+              },
+              "ResponseTemplates": {
+                "application/json": "#set($origin = $input.params(\"Origin\"))\n#if($origin == \"\") #set($origin = $input.params(\"origin\")) #end\n#if($origin.matches(\".*\")) #set($context.responseOverride.header.Access-Control-Allow-Origin = $origin) #end"
+              }
+            }
+          ]
+        },
+        "ResourceId": {
+          "Ref": "ApiGatewayResourceAdminMenuitemsIdVar"
+        },
+        "RestApiId": {
+          "Ref": "ApiGatewayRestApi"
+        }
+      }
+    },
+    "ApiGatewayMethodSaveOptions": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "AuthorizationType": "NONE",
+        "HttpMethod": "OPTIONS",
+        "MethodResponses": [
+          {
+            "StatusCode": "200",
+            "ResponseParameters": {
+              "method.response.header.Access-Control-Allow-Origin": true,
+              "method.response.header.Access-Control-Allow-Headers": true,
+              "method.response.header.Access-Control-Allow-Methods": true,
+              "method.response.header.Access-Control-Allow-Credentials": true
+            },
+            "ResponseModels": {}
+          }
+        ],
+        "RequestParameters": {},
+        "Integration": {
+          "Type": "MOCK",
+          "RequestTemplates": {
+            "application/json": "{statusCode:200}"
+          },
+          "ContentHandling": "CONVERT_TO_TEXT",
+          "IntegrationResponses": [
+            {
+              "StatusCode": "200",
+              "ResponseParameters": {
+                "method.response.header.Access-Control-Allow-Origin": "'*'",
+                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,X-Amz-User-Agent'",
+                "method.response.header.Access-Control-Allow-Methods": "'OPTIONS,POST'",
+                "method.response.header.Access-Control-Allow-Credentials": "'false'"
+              },
+              "ResponseTemplates": {
+                "application/json": "#set($origin = $input.params(\"Origin\"))\n#if($origin == \"\") #set($origin = $input.params(\"origin\")) #end\n#if($origin.matches(\".*\")) #set($context.responseOverride.header.Access-Control-Allow-Origin = $origin) #end"
+              }
+            }
+          ]
+        },
+        "ResourceId": {
+          "Ref": "ApiGatewayResourceSave"
         },
         "RestApiId": {
           "Ref": "ApiGatewayRestApi"
@@ -1568,7 +2060,265 @@
         "MethodResponses": []
       }
     },
-    "ApiGatewayDeployment1584033657352": {
+    "ApiGatewayMethodAdminMenuitemsPost": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "HttpMethod": "POST",
+        "RequestParameters": {},
+        "ResourceId": {
+          "Ref": "ApiGatewayResourceAdminMenuitems"
+        },
+        "RestApiId": {
+          "Ref": "ApiGatewayRestApi"
+        },
+        "ApiKeyRequired": false,
+        "AuthorizationType": "NONE",
+        "Integration": {
+          "IntegrationHttpMethod": "POST",
+          "Type": "AWS_PROXY",
+          "Uri": {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":apigateway:",
+                {
+                  "Ref": "AWS::Region"
+                },
+                ":lambda:path/2015-03-31/functions/",
+                {
+                  "Fn::GetAtt": [
+                    "CreateMenuItemsLambdaFunction",
+                    "Arn"
+                  ]
+                },
+                "/invocations"
+              ]
+            ]
+          }
+        },
+        "MethodResponses": []
+      }
+    },
+    "ApiGatewayMethodAdminMenuitemsIdVarGet": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "HttpMethod": "GET",
+        "RequestParameters": {},
+        "ResourceId": {
+          "Ref": "ApiGatewayResourceAdminMenuitemsIdVar"
+        },
+        "RestApiId": {
+          "Ref": "ApiGatewayRestApi"
+        },
+        "ApiKeyRequired": false,
+        "AuthorizationType": "NONE",
+        "Integration": {
+          "IntegrationHttpMethod": "POST",
+          "Type": "AWS_PROXY",
+          "Uri": {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":apigateway:",
+                {
+                  "Ref": "AWS::Region"
+                },
+                ":lambda:path/2015-03-31/functions/",
+                {
+                  "Fn::GetAtt": [
+                    "GetOneMenuItemsLambdaFunction",
+                    "Arn"
+                  ]
+                },
+                "/invocations"
+              ]
+            ]
+          }
+        },
+        "MethodResponses": []
+      }
+    },
+    "ApiGatewayMethodAdminMenuitemsGet": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "HttpMethod": "GET",
+        "RequestParameters": {},
+        "ResourceId": {
+          "Ref": "ApiGatewayResourceAdminMenuitems"
+        },
+        "RestApiId": {
+          "Ref": "ApiGatewayRestApi"
+        },
+        "ApiKeyRequired": false,
+        "AuthorizationType": "NONE",
+        "Integration": {
+          "IntegrationHttpMethod": "POST",
+          "Type": "AWS_PROXY",
+          "Uri": {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":apigateway:",
+                {
+                  "Ref": "AWS::Region"
+                },
+                ":lambda:path/2015-03-31/functions/",
+                {
+                  "Fn::GetAtt": [
+                    "GetAllMenuItemsLambdaFunction",
+                    "Arn"
+                  ]
+                },
+                "/invocations"
+              ]
+            ]
+          }
+        },
+        "MethodResponses": []
+      }
+    },
+    "ApiGatewayMethodAdminMenuitemsIdVarPut": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "HttpMethod": "PUT",
+        "RequestParameters": {},
+        "ResourceId": {
+          "Ref": "ApiGatewayResourceAdminMenuitemsIdVar"
+        },
+        "RestApiId": {
+          "Ref": "ApiGatewayRestApi"
+        },
+        "ApiKeyRequired": false,
+        "AuthorizationType": "NONE",
+        "Integration": {
+          "IntegrationHttpMethod": "POST",
+          "Type": "AWS_PROXY",
+          "Uri": {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":apigateway:",
+                {
+                  "Ref": "AWS::Region"
+                },
+                ":lambda:path/2015-03-31/functions/",
+                {
+                  "Fn::GetAtt": [
+                    "UpdateMenuItemsLambdaFunction",
+                    "Arn"
+                  ]
+                },
+                "/invocations"
+              ]
+            ]
+          }
+        },
+        "MethodResponses": []
+      }
+    },
+    "ApiGatewayMethodAdminMenuitemsIdVarDelete": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "HttpMethod": "DELETE",
+        "RequestParameters": {},
+        "ResourceId": {
+          "Ref": "ApiGatewayResourceAdminMenuitemsIdVar"
+        },
+        "RestApiId": {
+          "Ref": "ApiGatewayRestApi"
+        },
+        "ApiKeyRequired": false,
+        "AuthorizationType": "NONE",
+        "Integration": {
+          "IntegrationHttpMethod": "POST",
+          "Type": "AWS_PROXY",
+          "Uri": {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":apigateway:",
+                {
+                  "Ref": "AWS::Region"
+                },
+                ":lambda:path/2015-03-31/functions/",
+                {
+                  "Fn::GetAtt": [
+                    "DeleteMenuItemsLambdaFunction",
+                    "Arn"
+                  ]
+                },
+                "/invocations"
+              ]
+            ]
+          }
+        },
+        "MethodResponses": []
+      }
+    },
+    "ApiGatewayMethodSavePost": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "HttpMethod": "POST",
+        "RequestParameters": {},
+        "ResourceId": {
+          "Ref": "ApiGatewayResourceSave"
+        },
+        "RestApiId": {
+          "Ref": "ApiGatewayRestApi"
+        },
+        "ApiKeyRequired": false,
+        "AuthorizationType": "NONE",
+        "Integration": {
+          "IntegrationHttpMethod": "POST",
+          "Type": "AWS_PROXY",
+          "Uri": {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":apigateway:",
+                {
+                  "Ref": "AWS::Region"
+                },
+                ":lambda:path/2015-03-31/functions/",
+                {
+                  "Fn::GetAtt": [
+                    "SaveLambdaFunction",
+                    "Arn"
+                  ]
+                },
+                "/invocations"
+              ]
+            ]
+          }
+        },
+        "MethodResponses": []
+      }
+    },
+    "ApiGatewayDeployment1586384348292": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -1583,6 +2333,9 @@
         "ApiGatewayMethodBillingOptions",
         "ApiGatewayMethodTransactionOptions",
         "ApiGatewayMethodTransactionIdVarOptions",
+        "ApiGatewayMethodAdminMenuitemsOptions",
+        "ApiGatewayMethodAdminMenuitemsIdVarOptions",
+        "ApiGatewayMethodSaveOptions",
         "ApiGatewayMethodEmailPost",
         "ApiGatewayMethodUsersPost",
         "ApiGatewayMethodUsersIdVarGet",
@@ -1594,7 +2347,13 @@
         "ApiGatewayMethodTransactionIdVarGet",
         "ApiGatewayMethodTransactionGet",
         "ApiGatewayMethodTransactionIdVarPut",
-        "ApiGatewayMethodTransactionIdVarDelete"
+        "ApiGatewayMethodTransactionIdVarDelete",
+        "ApiGatewayMethodAdminMenuitemsPost",
+        "ApiGatewayMethodAdminMenuitemsIdVarGet",
+        "ApiGatewayMethodAdminMenuitemsGet",
+        "ApiGatewayMethodAdminMenuitemsIdVarPut",
+        "ApiGatewayMethodAdminMenuitemsIdVarDelete",
+        "ApiGatewayMethodSavePost"
       ]
     },
     "EmailLambdaPermissionApiGateway": {
@@ -2040,6 +2799,228 @@
           ]
         }
       }
+    },
+    "CreateMenuItemsLambdaPermissionApiGateway": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "CreateMenuItemsLambdaFunction",
+            "Arn"
+          ]
+        },
+        "Action": "lambda:InvokeFunction",
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":execute-api:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":",
+              {
+                "Ref": "ApiGatewayRestApi"
+              },
+              "/*/*"
+            ]
+          ]
+        }
+      }
+    },
+    "GetOneMenuItemsLambdaPermissionApiGateway": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "GetOneMenuItemsLambdaFunction",
+            "Arn"
+          ]
+        },
+        "Action": "lambda:InvokeFunction",
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":execute-api:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":",
+              {
+                "Ref": "ApiGatewayRestApi"
+              },
+              "/*/*"
+            ]
+          ]
+        }
+      }
+    },
+    "GetAllMenuItemsLambdaPermissionApiGateway": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "GetAllMenuItemsLambdaFunction",
+            "Arn"
+          ]
+        },
+        "Action": "lambda:InvokeFunction",
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":execute-api:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":",
+              {
+                "Ref": "ApiGatewayRestApi"
+              },
+              "/*/*"
+            ]
+          ]
+        }
+      }
+    },
+    "UpdateMenuItemsLambdaPermissionApiGateway": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "UpdateMenuItemsLambdaFunction",
+            "Arn"
+          ]
+        },
+        "Action": "lambda:InvokeFunction",
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":execute-api:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":",
+              {
+                "Ref": "ApiGatewayRestApi"
+              },
+              "/*/*"
+            ]
+          ]
+        }
+      }
+    },
+    "DeleteMenuItemsLambdaPermissionApiGateway": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "DeleteMenuItemsLambdaFunction",
+            "Arn"
+          ]
+        },
+        "Action": "lambda:InvokeFunction",
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":execute-api:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":",
+              {
+                "Ref": "ApiGatewayRestApi"
+              },
+              "/*/*"
+            ]
+          ]
+        }
+      }
+    },
+    "SaveLambdaPermissionApiGateway": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "SaveLambdaFunction",
+            "Arn"
+          ]
+        },
+        "Action": "lambda:InvokeFunction",
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":execute-api:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":",
+              {
+                "Ref": "ApiGatewayRestApi"
+              },
+              "/*/*"
+            ]
+          ]
+        }
+      }
     }
   },
   "Outputs": {
@@ -2051,73 +3032,109 @@
     "EmailLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "EmailLambdaVersionvvI1USnHfk9PKBshedGWUfjchEGaHzUEuBk16iAkY"
+        "Ref": "EmailLambdaVersionBcfLQB4dkEIO16gib485HlueyaKmLsBs8KFYuvS33g"
       }
     },
     "CreateUserLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "CreateUserLambdaVersionBOk8Q4ojDsDJ78EkENsYy6W5NsWq2Y0SQpxrryq7Rc"
+        "Ref": "CreateUserLambdaVersionDZXdK19SxLUBwsLF0blmQl5sNAuierxUdoCaWQG5c"
       }
     },
     "GetOneUserLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "GetOneUserLambdaVersioneeFAmtnn9sdvodT3HUWiKSYLi3Hj1y8HYfzsxcuOfYk"
+        "Ref": "GetOneUserLambdaVersionnXgYesPxzJ8xNKXDqyCLVi6nPz3fjlzxQq2fxGZDLw"
       }
     },
     "GetAllUsersLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "GetAllUsersLambdaVersion0JblQEDcOtaaU5aCLf9y90sAjqMhn5Uf6LjuFPRg"
+        "Ref": "GetAllUsersLambdaVersionNnEsFQ3BDQIXiQurJAgc8bbXrZnUV2C4HkHnwxRRSf0"
       }
     },
     "UpdateUserLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "UpdateUserLambdaVersionuFuBz9fXbVdb0aCOBE1h2sgTmYBj5TfLB4EET4faDyk"
+        "Ref": "UpdateUserLambdaVersionOpgSERX76ly5S0gydCHg3KQZlDMkbRT43mkr4nBY"
       }
     },
     "DeleteUserLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "DeleteUserLambdaVersionDdJvxfV6sVk2BCdgFk0uQSGLQOyZia8bJYzIFneNag"
+        "Ref": "DeleteUserLambdaVersionLcBlE8E4eH85LMT8c1wW18xE1ZldhKZizcEPtgg"
       }
     },
     "BillingLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "BillingLambdaVersionpXhtVxNIX2PktWH9QMrRqHVB4AIxGHklLml5KJhTjjM"
+        "Ref": "BillingLambdaVersiontYnR59EUhdXz565dzVuLppj3QUSYA0G67FB0Gi7bc"
       }
     },
     "CreateTransactionLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "CreateTransactionLambdaVersionrUMyAvO0RSitsThcLit1iSrXsazwAUFzU617UxHXqE"
+        "Ref": "CreateTransactionLambdaVersionjuN2bPzxnJeZdkPADLEWhWWjTBszPTOsBzYt6pwrQ"
       }
     },
     "GetOneTransactionLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "GetOneTransactionLambdaVersiona0bDEz0MXp4X4VSUWupZAQMPcCvK3jANLf2Zs3LtI"
+        "Ref": "GetOneTransactionLambdaVersionkWjqqLXmZFiteksxNWki2IUwj6G1YkYU3x7URB6h4I"
       }
     },
     "GetAllTransactionLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "GetAllTransactionLambdaVersionmiD8Y19foOTqsMeH3r65TbqaN2cFYcxrQzcOBVDx8"
+        "Ref": "GetAllTransactionLambdaVersion10Hpf79f5sHnjMErVJ01e01eE1HG7sSEhrv7f9b7Ht8"
       }
     },
     "UpdateTransactionLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "UpdateTransactionLambdaVersionqQs99FJeRAguLl4jPobUAma4IS53LnbXn1RfULB88"
+        "Ref": "UpdateTransactionLambdaVersionSuprWiX29Egb1AYxh4GSSjpHlTOP2oIRWeBhToqU"
       }
     },
     "DeleteTransactionLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "DeleteTransactionLambdaVersionGCYmGsJ6aihI1qQcvjiTdvtXgzBYIW5Xd3hchxvxs"
+        "Ref": "DeleteTransactionLambdaVersion3h40lWAQ3rGvSEdXgP2x7cKnQdCoFKosNnHAWj3hk"
+      }
+    },
+    "CreateMenuItemsLambdaFunctionQualifiedArn": {
+      "Description": "Current Lambda function version",
+      "Value": {
+        "Ref": "CreateMenuItemsLambdaVersiondf6Jtp9o0f0QeawGaukq6gQJppDy6yDkkEcw7COw3Y"
+      }
+    },
+    "GetOneMenuItemsLambdaFunctionQualifiedArn": {
+      "Description": "Current Lambda function version",
+      "Value": {
+        "Ref": "GetOneMenuItemsLambdaVersionLIqW98aU3MIyukfWvgW4YH1SIRXfs1244YY9LfQ"
+      }
+    },
+    "GetAllMenuItemsLambdaFunctionQualifiedArn": {
+      "Description": "Current Lambda function version",
+      "Value": {
+        "Ref": "GetAllMenuItemsLambdaVersionA442RQqauX2LGWWyxm64ceE57IJy9QQuU3dcG7a4kw"
+      }
+    },
+    "UpdateMenuItemsLambdaFunctionQualifiedArn": {
+      "Description": "Current Lambda function version",
+      "Value": {
+        "Ref": "UpdateMenuItemsLambdaVersionn3bRFb7wwiVAo9ZNJi02B86ZRjFXqUWGO8tVrXuyA"
+      }
+    },
+    "DeleteMenuItemsLambdaFunctionQualifiedArn": {
+      "Description": "Current Lambda function version",
+      "Value": {
+        "Ref": "DeleteMenuItemsLambdaVersion1FR4eRlyzb8HNxwLCwbkUzEFmayLzq3oCXF7qIzck"
+      }
+    },
+    "SaveLambdaFunctionQualifiedArn": {
+      "Description": "Current Lambda function version",
+      "Value": {
+        "Ref": "SaveLambdaVersioneRmeyPiUgdTPnTGnMcj9ARsqdu35GPQwAwJHmoOxbaQ"
       }
     },
     "ServiceEndpoint": {
