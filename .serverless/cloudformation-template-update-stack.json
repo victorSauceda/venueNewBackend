@@ -194,6 +194,26 @@
                     "s3:PutObjectAcl"
                   ],
                   "Resource": "arn:aws:s3:::venueappimages/*"
+                },
+                {
+                  "Effect": "Allow",
+                  "Action": [
+                    "dynamodb:DescribeTable",
+                    "dynamodb:Query",
+                    "dynamodb:Scan",
+                    "dynamodb:GetItem",
+                    "dynamodb:PutItem",
+                    "dynamodb:UpdateItem",
+                    "dynamodb:DeleteItem"
+                  ],
+                  "Resource": [
+                    {
+                      "Fn::GetAtt": [
+                        "NotesTable",
+                        "Arn"
+                      ]
+                    }
+                  ]
                 }
               ]
             }
@@ -222,7 +242,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/pareto-serverless-mongo/prod/1586384398050-2020-04-08T22:19:58.050Z/pareto-serverless-mongo.zip"
+          "S3Key": "serverless/pareto-serverless-mongo/prod/1586993569812-2020-04-15T23:32:49.812Z/pareto-serverless-mongo.zip"
         },
         "FunctionName": "pareto-serverless-mongo-prod-email",
         "Handler": "email.main",
@@ -264,7 +284,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/pareto-serverless-mongo/prod/1586384398050-2020-04-08T22:19:58.050Z/pareto-serverless-mongo.zip"
+          "S3Key": "serverless/pareto-serverless-mongo/prod/1586993569812-2020-04-15T23:32:49.812Z/pareto-serverless-mongo.zip"
         },
         "FunctionName": "pareto-serverless-mongo-prod-createUser",
         "Handler": "users.create",
@@ -306,7 +326,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/pareto-serverless-mongo/prod/1586384398050-2020-04-08T22:19:58.050Z/pareto-serverless-mongo.zip"
+          "S3Key": "serverless/pareto-serverless-mongo/prod/1586993569812-2020-04-15T23:32:49.812Z/pareto-serverless-mongo.zip"
         },
         "FunctionName": "pareto-serverless-mongo-prod-getOneUser",
         "Handler": "users.getOne",
@@ -348,7 +368,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/pareto-serverless-mongo/prod/1586384398050-2020-04-08T22:19:58.050Z/pareto-serverless-mongo.zip"
+          "S3Key": "serverless/pareto-serverless-mongo/prod/1586993569812-2020-04-15T23:32:49.812Z/pareto-serverless-mongo.zip"
         },
         "FunctionName": "pareto-serverless-mongo-prod-getAllUsers",
         "Handler": "users.getAll",
@@ -390,7 +410,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/pareto-serverless-mongo/prod/1586384398050-2020-04-08T22:19:58.050Z/pareto-serverless-mongo.zip"
+          "S3Key": "serverless/pareto-serverless-mongo/prod/1586993569812-2020-04-15T23:32:49.812Z/pareto-serverless-mongo.zip"
         },
         "FunctionName": "pareto-serverless-mongo-prod-updateUser",
         "Handler": "users.update",
@@ -432,7 +452,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/pareto-serverless-mongo/prod/1586384398050-2020-04-08T22:19:58.050Z/pareto-serverless-mongo.zip"
+          "S3Key": "serverless/pareto-serverless-mongo/prod/1586993569812-2020-04-15T23:32:49.812Z/pareto-serverless-mongo.zip"
         },
         "FunctionName": "pareto-serverless-mongo-prod-deleteUser",
         "Handler": "users.delete",
@@ -474,7 +494,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/pareto-serverless-mongo/prod/1586384398050-2020-04-08T22:19:58.050Z/pareto-serverless-mongo.zip"
+          "S3Key": "serverless/pareto-serverless-mongo/prod/1586993569812-2020-04-15T23:32:49.812Z/pareto-serverless-mongo.zip"
         },
         "FunctionName": "pareto-serverless-mongo-prod-billing",
         "Handler": "billing.main",
@@ -516,7 +536,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/pareto-serverless-mongo/prod/1586384398050-2020-04-08T22:19:58.050Z/pareto-serverless-mongo.zip"
+          "S3Key": "serverless/pareto-serverless-mongo/prod/1586993569812-2020-04-15T23:32:49.812Z/pareto-serverless-mongo.zip"
         },
         "FunctionName": "pareto-serverless-mongo-prod-createTransaction",
         "Handler": "transaction.create",
@@ -558,7 +578,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/pareto-serverless-mongo/prod/1586384398050-2020-04-08T22:19:58.050Z/pareto-serverless-mongo.zip"
+          "S3Key": "serverless/pareto-serverless-mongo/prod/1586993569812-2020-04-15T23:32:49.812Z/pareto-serverless-mongo.zip"
         },
         "FunctionName": "pareto-serverless-mongo-prod-getOneTransaction",
         "Handler": "transaction.getOne",
@@ -600,7 +620,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/pareto-serverless-mongo/prod/1586384398050-2020-04-08T22:19:58.050Z/pareto-serverless-mongo.zip"
+          "S3Key": "serverless/pareto-serverless-mongo/prod/1586993569812-2020-04-15T23:32:49.812Z/pareto-serverless-mongo.zip"
         },
         "FunctionName": "pareto-serverless-mongo-prod-getAllTransaction",
         "Handler": "transaction.getAll",
@@ -642,7 +662,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/pareto-serverless-mongo/prod/1586384398050-2020-04-08T22:19:58.050Z/pareto-serverless-mongo.zip"
+          "S3Key": "serverless/pareto-serverless-mongo/prod/1586993569812-2020-04-15T23:32:49.812Z/pareto-serverless-mongo.zip"
         },
         "FunctionName": "pareto-serverless-mongo-prod-updateTransaction",
         "Handler": "transaction.update",
@@ -684,7 +704,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/pareto-serverless-mongo/prod/1586384398050-2020-04-08T22:19:58.050Z/pareto-serverless-mongo.zip"
+          "S3Key": "serverless/pareto-serverless-mongo/prod/1586993569812-2020-04-15T23:32:49.812Z/pareto-serverless-mongo.zip"
         },
         "FunctionName": "pareto-serverless-mongo-prod-deleteTransaction",
         "Handler": "transaction.delete",
@@ -726,7 +746,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/pareto-serverless-mongo/prod/1586384398050-2020-04-08T22:19:58.050Z/pareto-serverless-mongo.zip"
+          "S3Key": "serverless/pareto-serverless-mongo/prod/1586993569812-2020-04-15T23:32:49.812Z/pareto-serverless-mongo.zip"
         },
         "FunctionName": "pareto-serverless-mongo-prod-createMenuItems",
         "Handler": "menuitems.create",
@@ -768,7 +788,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/pareto-serverless-mongo/prod/1586384398050-2020-04-08T22:19:58.050Z/pareto-serverless-mongo.zip"
+          "S3Key": "serverless/pareto-serverless-mongo/prod/1586993569812-2020-04-15T23:32:49.812Z/pareto-serverless-mongo.zip"
         },
         "FunctionName": "pareto-serverless-mongo-prod-getOneMenuItems",
         "Handler": "menuitems.getOne",
@@ -810,7 +830,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/pareto-serverless-mongo/prod/1586384398050-2020-04-08T22:19:58.050Z/pareto-serverless-mongo.zip"
+          "S3Key": "serverless/pareto-serverless-mongo/prod/1586993569812-2020-04-15T23:32:49.812Z/pareto-serverless-mongo.zip"
         },
         "FunctionName": "pareto-serverless-mongo-prod-getAllMenuItems",
         "Handler": "menuitems.getAll",
@@ -852,7 +872,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/pareto-serverless-mongo/prod/1586384398050-2020-04-08T22:19:58.050Z/pareto-serverless-mongo.zip"
+          "S3Key": "serverless/pareto-serverless-mongo/prod/1586993569812-2020-04-15T23:32:49.812Z/pareto-serverless-mongo.zip"
         },
         "FunctionName": "pareto-serverless-mongo-prod-updateMenuItems",
         "Handler": "menuitems.update",
@@ -894,7 +914,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/pareto-serverless-mongo/prod/1586384398050-2020-04-08T22:19:58.050Z/pareto-serverless-mongo.zip"
+          "S3Key": "serverless/pareto-serverless-mongo/prod/1586993569812-2020-04-15T23:32:49.812Z/pareto-serverless-mongo.zip"
         },
         "FunctionName": "pareto-serverless-mongo-prod-deleteMenuItems",
         "Handler": "menuitems.delete",
@@ -936,7 +956,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/pareto-serverless-mongo/prod/1586384398050-2020-04-08T22:19:58.050Z/pareto-serverless-mongo.zip"
+          "S3Key": "serverless/pareto-serverless-mongo/prod/1586993569812-2020-04-15T23:32:49.812Z/pareto-serverless-mongo.zip"
         },
         "FunctionName": "pareto-serverless-mongo-prod-save",
         "Handler": "s3handler.save",
@@ -2318,7 +2338,7 @@
         "MethodResponses": []
       }
     },
-    "ApiGatewayDeployment1586384348292": {
+    "ApiGatewayDeployment1586993526982": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
