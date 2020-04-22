@@ -6,7 +6,8 @@ const MenuItemsSchema = new mongoose.Schema({
   calories: Number,
   description: String,
   alt: String,
-  dietType: String
+  dietType: String,
 });
 
 export default mongoose.model("MenuItems", MenuItemsSchema);
+// helping becky
