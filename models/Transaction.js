@@ -7,7 +7,7 @@ const TransactionSchema = new mongoose.Schema({
   customerName: String,
   salesTax: String,
   total: Number,
-  cartItems: Array
+  cartItems: Array,
 });
 
 //Add customer phone number
